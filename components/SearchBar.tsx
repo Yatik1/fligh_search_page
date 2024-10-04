@@ -14,7 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-
+import { Input } from "@/components/ui/input"
 
 const Searchbar = ({label,type}: {label: string, type: "select" | "date"}) => {
  
@@ -22,21 +22,21 @@ const Searchbar = ({label,type}: {label: string, type: "select" | "date"}) => {
     const [calendarOpen, setCalendarOpen] = useState(false);
 
     return (
-        <div className='flex items-center gap-2 border border-[#E6E8EB] p-2 rounded-[6px]'>
+        <div className='flex items-center border border-[#E6E8EB] p-2 rounded-[6px] text-[#484a4db9]'>
             {type === "select" ? (
-                <>
+                <div className='flex items-center'>
                     <Icon icon={<Target />} />
                     <SelectScrollable label={label} />
-                </>
+                </div>
             ) : (
-                <div className='flex items-center justify-center py-1'>
+                <div className='flex items-center justify-center'>
                     <Icon icon={<CalendarIcon />} />
                     <div className="relative text-sm">
-                        <input
+                        <Input
                             type="text"
                             value={date ? date.toLocaleDateString() : label}
                             readOnly
-                            className="w-[250px] cursor-pointer"
+                            className="w-[177px] cursor-pointer"
                             onClick={() => setCalendarOpen(!calendarOpen)}
                             placeholder={label}
                         />
