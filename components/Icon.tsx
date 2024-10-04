@@ -2,13 +2,14 @@ import React from 'react'
 
 interface IconProps{
     icon:JSX.Element;
-    onclick?:()=>void
+    onclick?:()=>void;
+    bg?:boolean;
 }
 
-const Icon = ({icon,onclick}:IconProps) => {
+const Icon = ({icon,onclick,bg}:IconProps) => {
   return (
-    <div className='p-2 rounded-full flex items-center justify-center' onClick={onclick}>
-        <div className="w-4 h-4 flex items-center justify-center text-[#C9CACC]">
+    <div className={`p-[0.9rem] rounded-full flex items-center justify-center ${bg ? "bg-[#F5F7FA]" : ""}`} onClick={onclick}>
+        <div className={`${bg ? "text-black" : "text-[#C9CACC]"} w-4 h-4 flex items-center justify-center`}>
             {icon}
         </div>
     </div>
