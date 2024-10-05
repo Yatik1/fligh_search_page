@@ -9,7 +9,7 @@ interface IconProps{
 const Icon = ({icon,onclick,bg}:IconProps) => {
   return (
     <div className={`p-[0.9rem] rounded-full flex items-center justify-center ${bg ? "bg-[#F5F7FA]" : ""}`} onClick={onclick}>
-        <div className={`${bg ? "text-black" : "text-[#C9CACC]"} w-4 h-4 flex items-center justify-center`}>
+        <div className={`${bg ? "text-black" : "text-[#C9CACC]"} w-5 h-5 flex items-center justify-center`}>
             {icon}
         </div>
     </div>
