@@ -1,16 +1,19 @@
 "use client"
 
+import { SearchContextType, useSearchContext } from '@/utils/SearchContext'
 import React from 'react'
-import { useRouter } from 'next/navigation';
 
 function page() {
 
-  const router = useRouter()
+    const {whereFrom,whereTo,departure,returnDate} = useSearchContext() as SearchContextType
+
   return (
     <div>
-        Searched
-
-   <button onClick={() => router.push('/search/result')}>Go to Result</button>
+        <h1>Search page</h1>
+        <p>Where from: {whereFrom}</p>
+        <p>Where to: {whereTo}</p>
+        <p>Departure: {departure}</p>
+        <p>Return date: {returnDate}</p>    
     </div>
   )
 }
