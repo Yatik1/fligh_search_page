@@ -26,10 +26,12 @@ export const SearchProvider: React.FC<{ children: ReactNode }> = ({ children }) 
     if (savedSearch) {
       const { whereFrom, whereTo, departure, returnDate } = JSON.parse(savedSearch);
 
-      if (whereFrom) setWhereFrom(whereFrom);
-      if (whereTo) setWhereTo(whereTo);
-      if (departure) setDeparture(departure);
-      if (returnDate) setReturnDate(returnDate);
+      if (whereFrom && whereTo && departure && returnDate) {
+        setWhereFrom(whereFrom);
+        setWhereTo(whereTo);
+        setDeparture(departure);
+        setReturnDate(returnDate);
+      }
     }
   }, []);
 
