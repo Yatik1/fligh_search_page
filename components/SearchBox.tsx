@@ -5,6 +5,7 @@ import Icon from './Icon'
 import { ArrowLeftRight, Search } from 'lucide-react'
 import Searchbar from './SearchBar'
 import { Button } from './ui/button'
+import { useRouter } from 'next/navigation';
 
 const SearchBox = () => {
 
@@ -14,6 +15,8 @@ const SearchBox = () => {
   const [returnDate, setReturnDate] = useState<string>("")
 
   const [disable, setDisable] = useState<boolean>(true)
+
+  const router = useRouter()
 
   useEffect(() => {
     if (whereFrom && whereTo && departure && returnDate) {
@@ -26,6 +29,8 @@ const SearchBox = () => {
   const handleSearch = () => {
     if (whereFrom && whereTo && departure && returnDate) {
       console.log("Search parameters:", { whereFrom, whereTo, departure, returnDate })
+      // router.push(`/search?whereFrom=${whereFrom}&whereTo=${whereTo}&departure=${departure}&returnDate=${returnDate}`)
+      router.push('/search')
     }
   }
 
@@ -48,9 +53,8 @@ const SearchBox = () => {
       
      <div className="flex justify-end mt-6">
        <Button 
-         className='w-[15.6rem] flex items-center bg-[#003E39] justify-center' 
+         className={`w-[15.6rem] flex items-center bg-[#003E39] justify-center ${disable ? 'cursor-not-allowed' : 'cursor-pointer'}`} 
          onClick={handleSearch} 
-         disabled={disable}
        >
         <Icon icon={<Search/>} />
         Search flights
