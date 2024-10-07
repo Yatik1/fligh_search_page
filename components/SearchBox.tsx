@@ -6,13 +6,16 @@ import { ArrowLeftRight, Search } from 'lucide-react'
 import Searchbar from './SearchBar'
 import { Button } from './ui/button'
 import { useRouter } from 'next/navigation';
+import { SearchContextType, useSearchContext } from '@/utils/SearchContext';
 
 const SearchBox = () => {
 
-  const [whereFrom, setWhereFrom] = useState<string>("")
-  const [whereTo, setWhereTo] = useState<string>("")
-  const [departure, setDeparture] = useState<string>("")
-  const [returnDate, setReturnDate] = useState<string>("")
+   const {
+      whereFrom,setWhereFrom,
+      whereTo,setWhereTo,
+      departure,setDeparture,
+      returnDate,setReturnDate
+   } = useSearchContext() as SearchContextType
 
   const [disable, setDisable] = useState<boolean>(true)
 
