@@ -31,8 +31,7 @@ const SearchBox = () => {
 
   const handleSearch = () => {
     if (whereFrom && whereTo && departure && returnDate) {
-      console.log("Search parameters:", { whereFrom, whereTo, departure, returnDate })
-      // router.push(`/search?whereFrom=${whereFrom}&whereTo=${whereTo}&departure=${departure}&returnDate=${returnDate}`)
+      // console.log("Search parameters:", { whereFrom, whereTo, departure, returnDate })
       router.push('/search')
     }
   }
