@@ -1,23 +1,66 @@
 "use client"
 
 import { SearchContextType, useSearchContext } from '@/utils/SearchContext'
+import {airports} from '@/data'
 import React from 'react'
+import { dateFormatter } from '@/utils/dateFormatter'
+import { Separator } from './ui/separator'
+import Icon from './Icon'
+import { Search, X } from 'lucide-react'
 
 
 const SearchNav = () => {
-    const {whereFrom,whereTo,departure,returnDate} = useSearchContext() as SearchContextType
+  
+  const {whereFrom,whereTo,departure,returnDate} = useSearchContext() as SearchContextType
+
+  const FromCode = airports.find(airport => airport.name === whereFrom)?.code
+  const ToCode = airports.find(airport => airport.name === whereTo)?.code
+
 
   return (
-    <div className='px-10  py-7 border-b border-[#E6E8EB]'>
-        <div className="w-fit flex items-center gap-8 border border-[#E6E8EB] rounded-full p-4 text-md tracking-tight">
-            <div className="flex items-start justify-center">{whereFrom}</div>
-            <div className="flex items-start justify-center">{whereTo}</div>
-            <div className="flex items-start justify-center">{departure}</div>
-            <div className="flex items-start justify-center">{returnDate}</div>
+   <>
+    { whereFrom && whereTo && departure && returnDate && (
+      <div className='py-7 px-[10rem] border-b border-[#E6E8EB] flex items-center justify-between'>
+        <div className="w-fit flex items-center justify-center gap-5 border border-[#E6E8EB] rounded-full py-2 px-6 text-md tracking-tight">
+          <div className="flex items-start justify-center gap-[0.5rem] text-[15px]">
+            <p>{FromCode}</p>
+            <p className='text-[#787B80] font-extralight'>{whereFrom}</p>
+          </div>
+
+          <Separator orientation='vertical' className='h-[1.5rem]'/>
+
+          <div className="flex items-start justify-center gap-[0.5rem] text-[15px]">
+            <p>{ToCode}</p>
+            <p className='text-[#787B80] font-extralight'>{whereTo}</p>
+          </div>
+
+          <Separator orientation='vertical' className='h-[1.5rem]'/>
+
+          <div className="flex items-start justify-center gap-[0.5rem] text-[15px]">
+            <p>
+              {dateFormatter(departure)} - {dateFormatter(returnDate)}
+            </p>
+          </div>
+
+          <Separator orientation='vertical' className='h-[1.5rem]'/>
+
+          <Icon 
+            icon={<Search />}
+            bg={true}
+            className='w-4 h-4 text-[#003E39] cursor-pointer'
+          />
 
         </div>
-    </div>
 
+        <Icon 
+          icon={<X />}
+          bg={true}
+          border={true}
+        />
+      </div>
+    )
+    }
+   </>
   )
 }
 
