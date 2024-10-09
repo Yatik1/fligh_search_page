@@ -2,7 +2,7 @@ import React from 'react'
 
 function page() {
   return (
-    <div>Result page</div>
+    <div>Result page will appear from the right side</div>
   )
 }
 
