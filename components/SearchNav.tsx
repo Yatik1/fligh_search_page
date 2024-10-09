@@ -21,7 +21,7 @@ const SearchNav = () => {
    <>
     { whereFrom && whereTo && departure && returnDate && (
       <div className='py-7 px-[10rem] border-b border-[#E6E8EB] flex items-center justify-between'>
-        <div className="w-fit flex items-center justify-center gap-5 border border-[#E6E8EB] rounded-full py-2 px-6 text-md tracking-tight">
+        <div className="w-fit flex items-center justify-center gap-5 border border-[#E6E8EB] rounded-full py-2 px-3 pl-5 text-md tracking-tight">
           <div className="flex items-start justify-center gap-[0.5rem] text-[15px]">
             <p>{FromCode}</p>
             <p className='text-[#787B80] font-extralight'>{whereFrom}</p>
@@ -46,16 +46,16 @@ const SearchNav = () => {
 
           <Icon 
             icon={<Search />}
-            bg={true}
-            className='w-4 h-4 text-[#003E39] cursor-pointer'
+            bgStyle='bg-[#E5EBEB] rounded-full w-8 h-8 flex items-center justify-center'
+            iconStyle='w-4 h-4text-[#003E39] cursor-pointer flex items-center justify-center'
           />
 
         </div>
 
         <Icon 
           icon={<X />}
-          bg={true}
-          border={true}
+          bgStyle='rounded-full border border-[#E6E8EB] w-10 h-10 flex items-center justify-center'
+          iconStyle='w-5 h-5 text-[#787B80] cursor-pointer flex items-center justify-center'
         />
       </div>
     )
