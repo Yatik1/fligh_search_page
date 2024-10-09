@@ -45,7 +45,13 @@ const SearchBox = () => {
       <div className="flex flex-row items-center justify-between gap-3 mt-[1.5rem]">
 
         <Searchbar label="Where from?" type='select' value={whereFrom} onChange={setWhereFrom}/>
-        <Icon icon={<ArrowLeftRight/>} bg={true} />
+        
+        <Icon 
+          icon={<ArrowLeftRight/>} 
+          bgStyle='bg-[#F5F7FA] rounded-full w-9 h-9 flex items-center justify-center'
+          iconStyle='w-[15px] h-[15px] text-[#003E39] cursor-pointer flex items-center justify-center'
+        />
+
         <Searchbar label="Where to?" type='select' value={whereTo} onChange={setWhereTo}/>
         
         <Searchbar label="Departure" type='date' value={departure} onChange={setDeparture}/>
@@ -53,12 +59,16 @@ const SearchBox = () => {
 
       </div>
       
-     <div className="flex justify-end mt-6">
+     <div className="flex items-center justify-end mt-6">
        <Button 
-         className={`w-[15.6rem] flex items-center bg-[#003E39] justify-center ${disable ? 'cursor-not-allowed' : 'cursor-pointer'}`} 
+         className={`w-[15.6rem] flex items-center bg-[#003E39] justify-center gap-1 ${disable ? 'cursor-not-allowed' : 'cursor-pointer'}`} 
          onClick={handleSearch} 
        >
-        <Icon icon={<Search/>} />
+        <Icon 
+          icon={<Search/>} 
+          bgStyle='flex items-center justify-center'
+          iconStyle='w-[16px] h-[16px] text-[#C9CACC] cursor-pointer flex items-center justify-center'
+        />
         Search flights
       </Button>
      </div>
