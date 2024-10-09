@@ -32,12 +32,20 @@ const Searchbar = ({label,type,value,onChange}: {label: string, type: "select" |
         <div className='flex items-center border border-[#E6E8EB] p-2 rounded-[6px]'>
             {type === "select" ? (
                 <div className='flex items-center w-[265px]'>
-                    <Icon icon={<Target />} />
+                    <Icon 
+                      icon={<Target />} 
+                      bgStyle='rounded-full flex items-center justify-center'
+                      iconStyle='w-[18.33px] h-[18.33px] text-[#C9CACC] cursor-pointer flex items-center justify-center'
+                    />
                     <SelectScrollable label={label} value={value} onChange={onChange} />
                 </div>
             ) : (
                 <div className='flex items-center justify-center'>
-                    <Icon icon={<CalendarIcon />} />
+                    <Icon 
+                      icon={<CalendarIcon />} 
+                      bgStyle='rounded-full flex items-center justify-center'
+                      iconStyle='w-[18.33px] h-[18.33px] text-[#C9CACC] cursor-pointer flex items-center justify-center'
+                    />
                     <div className="relative text-sm">
                         <Input
                             type="text"
