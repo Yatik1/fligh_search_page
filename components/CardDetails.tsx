@@ -49,7 +49,7 @@ function CardDetails() {
 
         <Separator orientation='vertical' className='h-auto' />
 
-        <div className="w-[20%] h-full flex flex-col items-start justify-end p-5 ">
+        <div className="w-[20%] flex flex-col items-start justify-end p-5 ">
             <div className='text-[#787B80] text-xs'>from</div>
             <h4 className='text-lg'>AED 2,456.90</h4>
             <Button className='w-full bg-[#003E39]'>Select</Button>
