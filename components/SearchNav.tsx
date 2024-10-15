@@ -1,7 +1,7 @@
 "use client"
 
 import { SearchContextType, useSearchContext } from '@/utils/SearchContext'
-import {airports} from '@/data'
+import {airports} from '@/data/data'
 import React from 'react'
 import { dateFormatter } from '@/utils/dateFormatter'
 import { Separator } from './ui/separator'
