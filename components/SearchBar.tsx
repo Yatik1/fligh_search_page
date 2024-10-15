@@ -5,7 +5,7 @@ import Icon from './Icon'
 import { Calendar as CalendarIcon, Target } from 'lucide-react'
 import { Calendar } from './ui/calendar'
 
-import { airports } from '@/data'
+import { airports } from '@/data/data'
 
 import {
   Select,
